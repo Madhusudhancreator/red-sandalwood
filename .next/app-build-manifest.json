@@ -1,0 +1,95 @@
+{
+  "pages": {
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/(site)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/layout.js"
+    ],
+    "/(site)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/page.js"
+    ],
+    "/(site)/knowledge-center/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/knowledge-center/page.js"
+    ],
+    "/(site)/farmer-training/videos/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/farmer-training/videos/page.js"
+    ],
+    "/(site)/farmer-training/workshops/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/farmer-training/workshops/page.js"
+    ],
+    "/(site)/legal-guidelines/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/legal-guidelines/page.js"
+    ],
+    "/(site)/legal-guidelines/forest-department-rules/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/legal-guidelines/forest-department-rules/page.js"
+    ],
+    "/(site)/farming-guide/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/farming-guide/page.js"
+    ],
+    "/(site)/farming-guide/nursery/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/farming-guide/nursery/page.js"
+    ],
+    "/(site)/farming-guide/plantation/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/farming-guide/plantation/page.js"
+    ],
+    "/(site)/knowledge-center/tree-information/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/knowledge-center/tree-information/page.js"
+    ],
+    "/(site)/about/vision/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/about/vision/page.js"
+    ],
+    "/(site)/about/members/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/about/members/page.js"
+    ],
+    "/(site)/legal-guidelines/tree-registration/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/legal-guidelines/tree-registration/page.js"
+    ],
+    "/(site)/legal-guidelines/transport-permits/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/legal-guidelines/transport-permits/page.js"
+    ],
+    "/(site)/farming-guide/maintenance/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/farming-guide/maintenance/page.js"
+    ],
+    "/(site)/market-trade/export-information/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/market-trade/export-information/page.js"
+    ]
+  }
+}
