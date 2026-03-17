@@ -1,7 +1,0 @@
-{
-  "/(site)/page": "app/(site)/page.js",
-  "/(site)/knowledge-center/page": "app/(site)/knowledge-center/page.js",
-  "/(site)/farmer-training/workshops/page": "app/(site)/farmer-training/workshops/page.js",
-  "/(site)/farmer-training/videos/page": "app/(site)/farmer-training/videos/page.js",
-  "/(site)/about/vision/page": "app/(site)/about/vision/page.js"
-}

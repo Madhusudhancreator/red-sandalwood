@@ -4,7 +4,8 @@
       "Bash(cd \"D:\\\\creative_touch\\\\red-sandalwood\" && npm install 2>&1)",
       "Bash(cd \"D:\\\\creative_touch\\\\red-sandalwood\" && rm -rf node_modules package-lock.json && npm install 2>&1)",
       "Bash(find /d/creative_touch/red-sandalwood/src -type f | grep -E \"\\\\.\\(ts|tsx|js|jsx\\)$\")",
-      "Bash(cd \"D:/creative_touch/red-sandalwood\" && npx tsc --noEmit 2>&1)"
+      "Bash(cd \"D:/creative_touch/red-sandalwood\" && npx tsc --noEmit 2>&1)",
+      "Bash(find . -maxdepth 1 -name \"tailwind.config.*\" -o -name \".env*\" 2>/dev/null | grep -v node_modules)"
     ]
   }
 }

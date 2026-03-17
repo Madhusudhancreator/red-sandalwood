@@ -1,0 +1,80 @@
+export type Lang = "en" | "te";
+
+export const translations = {
+  en: {
+    nav: {
+      ourStory: "Our Story",
+      whyChooseUs: "Why Choose Us",
+      farmerBenefits: "Farmer Benefits",
+      helpSupport: "Help & Support",
+      financeHelp: "Finance Help",
+      legalSteps: "Legal Steps",
+      ourMembers: "Our Members",
+      joinNow: "Join Now",
+    },
+    footer: {
+      tagline:
+        "Supporting red sandalwood farmers across Andhra Pradesh with knowledge, legal guidance, and market access.",
+      quickLinks: "Quick Links",
+      resources: "Resources",
+      contact: "Contact",
+      getInTouch: "Get in Touch",
+      copyright: "Sandalwood & Red Sanders Growers Association – Andhra Pradesh",
+      quickLinkItems: [
+        { label: "Our Story", href: "/our-story" },
+        { label: "Why Choose Us", href: "/why-choose-us" },
+        { label: "Farmer Benefits", href: "/farmer-benefits" },
+        { label: "Legal Steps", href: "/legal-steps" },
+      ],
+      resourceItems: [
+        { label: "Finance Help", href: "/finance-help" },
+        { label: "Help & Support", href: "/help-support" },
+        { label: "Our Members", href: "/our-members" },
+        { label: "Join Now", href: "/join-now" },
+      ],
+    },
+    lang: {
+      en: "English",
+      te: "తెలుగు",
+    },
+  },
+  te: {
+    nav: {
+      ourStory: "మన కథ",
+      whyChooseUs: "మమ్మల్ని ఎందుకు",
+      farmerBenefits: "రైతు ప్రయోజనాలు",
+      helpSupport: "సహాయం & మద్దతు",
+      financeHelp: "ఆర్థిక సహాయం",
+      legalSteps: "చట్టపరమైన దశలు",
+      ourMembers: "మన సభ్యులు",
+      joinNow: "ఇప్పుడే చేరండి",
+    },
+    footer: {
+      tagline:
+        "జ్ఞానం, న్యాయ మార్గదర్శకత్వం మరియు మార్కెట్ యాక్సెస్‌తో ఆంధ్రప్రదేశ్ అంతటా రెడ్ శాండల్‌వుడ్ రైతులకు సహాయపడటం.",
+      quickLinks: "త్వరిత లింక్‌లు",
+      resources: "వనరులు",
+      contact: "సంప్రదింపు",
+      getInTouch: "సంప్రదించండి",
+      copyright: "చందనం & రెడ్ శాండర్స్ గ్రోవర్స్ అసోసియేషన్ – ఆంధ్రప్రదేశ్",
+      quickLinkItems: [
+        { label: "మన కథ", href: "/our-story" },
+        { label: "మమ్మల్ని ఎందుకు", href: "/why-choose-us" },
+        { label: "రైతు ప్రయోజనాలు", href: "/farmer-benefits" },
+        { label: "చట్టపరమైన దశలు", href: "/legal-steps" },
+      ],
+      resourceItems: [
+        { label: "ఆర్థిక సహాయం", href: "/finance-help" },
+        { label: "సహాయం & మద్దతు", href: "/help-support" },
+        { label: "మన సభ్యులు", href: "/our-members" },
+        { label: "ఇప్పుడే చేరండి", href: "/join-now" },
+      ],
+    },
+    lang: {
+      en: "English",
+      te: "తెలుగు",
+    },
+  },
+} as const;
+
+export type TranslationKeys = typeof translations.en;

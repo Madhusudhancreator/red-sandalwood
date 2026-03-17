@@ -1,5 +1,16 @@
 import { blockContent } from "./shared/blockContent";
 import { seoFields } from "./shared/seoFields";
+import { localeString } from "./shared/localeString";
+import { localeText } from "./shared/localeText";
+import { localeBlockContent } from "./shared/localeBlockContent";
+import { ourStoryPage } from "./ourStoryPage";
+import { whyChooseUsPage } from "./whyChooseUsPage";
+import { farmerBenefitsPage } from "./farmerBenefitsPage";
+import { helpSupportPage } from "./helpSupportPage";
+import { financeHelpPage } from "./financeHelpPage";
+import { legalStepsPage } from "./legalStepsPage";
+import { ourMembersPage } from "./ourMembersPage";
+import { joinNowPage } from "./joinNowPage";
 import { homePage } from "./homePage";
 import { aboutPage, aboutVision, member, partner } from "./aboutPage";
 import {
@@ -43,6 +54,9 @@ export const schemaTypes = [
   // Shared
   blockContent,
   seoFields,
+  localeString,
+  localeText,
+  localeBlockContent,
   // Pages
   homePage,
   aboutPage,
@@ -76,4 +90,13 @@ export const schemaTypes = [
   joinAssociationPage,
   farmerRegistrationPage,
   contactPage,
+  // New pages
+  ourStoryPage,
+  whyChooseUsPage,
+  farmerBenefitsPage,
+  helpSupportPage,
+  financeHelpPage,
+  legalStepsPage,
+  ourMembersPage,
+  joinNowPage,
 ];
