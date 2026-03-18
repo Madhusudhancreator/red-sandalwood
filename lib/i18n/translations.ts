@@ -43,7 +43,6 @@ export const translations = {
       whyChooseUs: "మమ్మల్ని ఎందుకు",
       farmerBenefits: "రైతు ప్రయోజనాలు",
       helpSupport: "సహాయం & మద్దతు",
-      financeHelp: "ఆర్థిక సహాయం",
       legalSteps: "చట్టపరమైన దశలు",
       ourMembers: "మన సభ్యులు",
       joinNow: "ఇప్పుడే చేరండి",
