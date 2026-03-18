@@ -19,14 +19,13 @@ export function Navbar() {
     { label: t.nav.whyChooseUs, href: "/why-choose-us" },
     { label: t.nav.farmerBenefits, href: "/farmer-benefits" },
     { label: t.nav.helpSupport, href: "/help-support" },
-    { label: t.nav.financeHelp, href: "/finance-help" },
     { label: t.nav.legalSteps, href: "/legal-steps" },
     { label: t.nav.ourMembers, href: "/our-members" },
   ];
 
   return (
     <header className="bg-white text-black shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+      <div className="px-4 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center shrink-0">
           <Image
             src="/assets/logo-white.jpeg"

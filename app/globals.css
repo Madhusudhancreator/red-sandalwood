@@ -42,3 +42,33 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+.wood3d{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 78px;
+  line-height: 0.92;
+  letter-spacing: -2px;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  color: transparent;
+  background: linear-gradient(
+    to bottom,
+    #c97a47 0%,
+    #b86639 18%,
+    #9d522d 45%,
+    #874324 70%,
+    #6f331b 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow:
+    1px 1px 0 #6a2f18,
+    2px 2px 0 #6a2f18,
+    3px 3px 0 #5b2714,
+    4px 4px 0 #5b2714,
+    5px 5px 0 #4a1e0f,
+    8px 8px 14px rgba(0,0,0,0.28);
+}

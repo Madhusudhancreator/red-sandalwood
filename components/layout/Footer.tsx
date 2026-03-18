@@ -8,8 +8,8 @@ export function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-forest-900 text-forest-100 mt-16">
-      <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-forest-900 text-forest-100">
+      <div className=" px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <Image
             src="/assets/logo-white.svg"

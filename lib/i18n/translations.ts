@@ -3,14 +3,13 @@ export type Lang = "en" | "te";
 export const translations = {
   en: {
     nav: {
-      ourStory: "Our Story",
-      whyChooseUs: "Why Choose Us",
-      farmerBenefits: "Farmer Benefits",
-      helpSupport: "Help & Support",
-      financeHelp: "Finance Help",
-      legalSteps: "Legal Steps",
-      ourMembers: "Our Members",
-      joinNow: "Join Now",
+      ourStory: "SRSGA history",
+      whyChooseUs: "Why Us",
+      farmerBenefits: "Memebers Benefits",
+      helpSupport: "Support",
+      legalSteps: "Legal Advice",
+      ourMembers: "FAQ",
+      joinNow: "Join SRSGA",
     },
     footer: {
       tagline:
