@@ -4,7 +4,6 @@ export const farmerBenefitsPage = defineType({
   name: "farmerBenefitsPage",
   title: "Farmer Benefits Page",
   type: "document",
-  __experimental_actions: ["update", "publish"],
   fields: [
     defineField({ name: "title", title: "Title", type: "localeString" }),
     defineField({ name: "intro", title: "Introduction", type: "localeText" }),

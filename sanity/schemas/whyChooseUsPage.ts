@@ -4,7 +4,6 @@ export const whyChooseUsPage = defineType({
   name: "whyChooseUsPage",
   title: "Why Choose Us Page",
   type: "document",
-  __experimental_actions: ["update", "publish"],
   fields: [
     defineField({ name: "title", title: "Title", type: "localeString" }),
     defineField({ name: "intro", title: "Introduction", type: "localeText" }),

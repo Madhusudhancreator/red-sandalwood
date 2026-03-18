@@ -159,7 +159,7 @@ export default function LegalStepsPage() {
         <div className="absolute inset-0 bg-forest-900/82" />
         <div className="relative z-10 max-w-4xl mx-auto px-8 py-16 text-center">
           <p className="text-3xl font-bold text-white mb-4">
-            "Doing it right from the start saves years of trouble later."
+            &ldquo;Doing it right from the start saves years of trouble later.&rdquo;
           </p>
           <p className="text-forest-200 text-lg">
             SRSGA guides every member through the complete legal process — from registration to sale.

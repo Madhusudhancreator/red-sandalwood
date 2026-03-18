@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default async function MembersPage() {
-  const members = await getMembersData();
+  type Member = { _id: string; name: string; role?: string; bio?: string; photo?: object };
+  const members = await getMembersData() as Member[] | null;
   return (
     <>
       <PageHero
@@ -23,7 +24,7 @@ export default async function MembersPage() {
           <p className="text-gray-500">Member information coming soon.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {members.map((m: { _id: string; name: string; role?: string; bio?: string; photo?: object }) => (
+            {members.map((m) => (
               <div key={m._id} className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm flex gap-4">
                 {m.photo && (
                   <Image

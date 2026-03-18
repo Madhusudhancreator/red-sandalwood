@@ -116,7 +116,7 @@ export default function JoinNowPage() {
                 <input type="text" placeholder="Your full name" className="bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-sandalwood-400 focus:ring-1 focus:ring-sandalwood-400 transition" />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-semibold text-forest-800">Father's / Husband's Name</label>
+                <label className="text-sm font-semibold text-forest-800">Father&apos;s / Husband&apos;s Name</label>
                 <input type="text" placeholder="Father's or husband's name" className="bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-sandalwood-400 focus:ring-1 focus:ring-sandalwood-400 transition" />
               </div>
               <div className="flex flex-col gap-1.5">

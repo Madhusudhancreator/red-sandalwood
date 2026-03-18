@@ -13,7 +13,6 @@ export const client = createClient({
 });
 
 // Safe fetch wrapper — returns null when Sanity isn't configured or on error
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function safeFetch(
   query: string,
   params: Record<string, unknown> = {},

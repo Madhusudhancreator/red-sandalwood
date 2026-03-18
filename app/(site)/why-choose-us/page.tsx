@@ -174,7 +174,7 @@ export default function WhyChooseUsPage() {
         <div className="absolute inset-0 bg-forest-900/78" />
         <div className="relative z-10 max-w-3xl mx-auto px-8 py-20 text-center">
           <p className="text-3xl font-bold text-white leading-relaxed mb-6">
-            "No farmer should have to figure out Red Sandalwood alone. That is why SRSGA exists."
+            &ldquo;No farmer should have to figure out Red Sandalwood alone. That is why SRSGA exists.&rdquo;
           </p>
           <p className="text-sandalwood-400 font-semibold text-lg">— SRSGA Founding Members</p>
         </div>
