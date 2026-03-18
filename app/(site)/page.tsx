@@ -1,9 +1,5 @@
 import { getHomePageData } from "@/lib/sanity/queries/home";
-import { PortableTextRenderer } from "@/components/ui/PortableTextRenderer";
-import { SectionIndexGrid } from "@/components/ui/SectionIndexGrid";
 import type { Metadata } from "next";
-
-
 
 export const revalidate = 3600;
 
@@ -14,18 +10,6 @@ export async function generateMetadata(): Promise<Metadata> {
     description: data?.seo?.metaDescription ?? "",
   };
 }
-
-const sections = [
-  { label: "About Association", href: "/about", description: "Vision, members, and partners of our association" },
-  { label: "Knowledge Center", href: "/knowledge-center", description: "Tree information, farming techniques, climate & soil" },
-  { label: "Farming Guide", href: "/farming-guide", description: "Nursery, plantation, maintenance, and harvesting" },
-  { label: "Legal Guidelines", href: "/legal-guidelines", description: "Forest department rules, registration & permits" },
-  { label: "Farmer Training", href: "/farmer-training", description: "Workshops, videos, and PDF guides" },
-  { label: "Research & Innovation", href: "/research-innovation", description: "Agroforestry and seed variety research" },
-  { label: "Market & Trade", href: "/market-trade", description: "Timber prices and export information" },
-  { label: "Member Portal", href: "/member-portal", description: "Join the association or register as a farmer" },
-  { label: "Contact Us", href: "/contact", description: "Get in touch with our team" },
-];
 
 export default async function HomePage() {
   const data = await getHomePageData();
