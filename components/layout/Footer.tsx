@@ -12,7 +12,7 @@ export function Footer() {
       <div className=" px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <Image
-            src="/assets/logo-white.svg"
+            src="/assets/logo-white.png"
             alt="Red Sanders Growers Association – Andhra Pradesh"
             width={120}
             height={42}

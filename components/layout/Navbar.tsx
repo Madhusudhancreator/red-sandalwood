@@ -28,7 +28,7 @@ export function Navbar() {
       <div className="px-4 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center shrink-0">
           <Image
-            src="/assets/logo-white.jpeg"
+            src="/assets/logo-white.png"
             alt="Red Sanders Growers Association – Andhra Pradesh"
             width={50}
             height={48}
