@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 interface LocaleStringValue {
@@ -9,7 +10,7 @@ interface LocaleStringValue {
 
 interface LocaleStringProps {
   value: LocaleStringValue | null | undefined;
-  tag?: keyof JSX.IntrinsicElements;
+  tag?: keyof React.JSX.IntrinsicElements;
   className?: string;
   fallback?: string;
 }
