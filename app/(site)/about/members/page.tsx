@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: "Members – Sandalwood & Red Sanders Growers Association",
 };
 
+/**
+ * Renders the "Our Members" page with a hero and either a grid of member cards or a placeholder message.
+ *
+ * Renders a PageHero with breadcrumb links, then shows a message if no members are available or a responsive
+ * grid of member cards. Each card displays the member's avatar (when provided), name, optional role, and optional bio.
+ *
+ * @returns The JSX for the Members page containing the hero and the member list or a "coming soon" message.
+ */
 export default async function MembersPage() {
   type Member = { _id: string; name: string; role?: string; bio?: string; photo?: object };
   const members = await getMembersData() as Member[] | null;
