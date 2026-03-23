@@ -3,9 +3,10 @@ export type Lang = "en" | "te";
 export const translations = {
   en: {
     nav: {
-      ourStory: "SRSGA history",
+      home: "Home",
+      ourStory: "SRSGA History",
       whyChooseUs: "Why Us",
-      farmerBenefits: "Memebers Benefits",
+      farmerBenefits: "Member Benefits",
       helpSupport: "Support",
       legalSteps: "Legal Advice",
       ourMembers: "FAQ",
@@ -39,12 +40,13 @@ export const translations = {
   },
   te: {
     nav: {
-      ourStory: "మన కథ",
+      home: "హోమ్",
+      ourStory: "ఎస్‌ఆర్‌ఎస్‌జిఏ చరిత్ర",
       whyChooseUs: "మమ్మల్ని ఎందుకు",
-      farmerBenefits: "రైతు ప్రయోజనాలు",
-      helpSupport: "సహాయం & మద్దతు",
-      legalSteps: "చట్టపరమైన దశలు",
-      ourMembers: "మన సభ్యులు",
+      farmerBenefits: "సభ్యుల ప్రయోజనాలు",
+      helpSupport: "సహాయం",
+      legalSteps: "చట్ట సలహా",
+      ourMembers: "తరచుగా అడిగే ప్రశ్నలు",
       joinNow: "ఇప్పుడే చేరండి",
     },
     footer: {
