@@ -1,5 +1,6 @@
 import { getContactPageData } from "@/lib/sanity/queries/contact";
 import { PageHero } from "@/components/ui/PageHero";
+import { ContactForm } from "@/components/ui/ContactForm";
 import type { Metadata } from "next";
 
 export const revalidate = 3600;
@@ -18,8 +19,10 @@ export default async function ContactPage() {
         subtitle={data?.intro ?? "Get in touch with the Sandalwood & Red Sanders Growers Association"}
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
+
       <section className="max-w-7xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
           {/* Contact details */}
           <div className="space-y-6">
             {data?.address && (
@@ -87,23 +90,27 @@ export default async function ContactPage() {
             )}
           </div>
 
-          {/* Map embed */}
-          {data?.mapEmbed && (
-            <div className="rounded-xl overflow-hidden border border-gray-200 h-80 lg:h-auto">
-              <iframe
-                src={data.mapEmbed}
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: "320px" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Office Location"
-              />
-            </div>
-          )}
+          {/* Contact form */}
+          <ContactForm />
         </div>
       </section>
+
+      {data?.mapEmbed && (
+        <section className="max-w-7xl mx-auto px-4 pb-10">
+          <div className="rounded-xl overflow-hidden border border-gray-200 h-80">
+            <iframe
+              src={data.mapEmbed}
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: "320px" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Office Location"
+            />
+          </div>
+        </section>
+      )}
     </>
   );
 }

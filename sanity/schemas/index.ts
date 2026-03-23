@@ -49,6 +49,7 @@ import {
   farmerRegistrationPage,
 } from "./memberPortalPage";
 import { contactPage } from "./contactPage";
+import { contactSubmission } from "./contactSubmission";
 
 export const schemaTypes = [
   // Shared
@@ -99,4 +100,5 @@ export const schemaTypes = [
   legalStepsPage,
   ourMembersPage,
   joinNowPage,
+  contactSubmission,
 ];
