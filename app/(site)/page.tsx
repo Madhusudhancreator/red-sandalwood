@@ -34,13 +34,13 @@ export default async function HomePage() {
           <p>Red Sandalwood is not just a tree. It is a long-term support for your family, land, and future income.</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="/member-portal/join-association"
+              href="/join-now"
               className="bg-sandalwood-600 hover:bg-sandalwood-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
             >
               Join SRSGA
             </a>
             <a
-              href="/about"
+              href="/our-story"
               className="border border-white hover:bg-white hover:text-forest-800 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
             >
               Learn How to grow

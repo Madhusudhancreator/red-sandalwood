@@ -1,4 +1,4 @@
-import { getMembersData } from "@/lib/sanity/queries/about";
+import { getMembersData } from "@/lib/sanity/queries/members";
 import { PageHero } from "@/components/ui/PageHero";
 import { urlFor } from "@/lib/sanity/image";
 import Image from "next/image";
@@ -17,7 +17,7 @@ export default async function MembersPage() {
     <>
       <PageHero
         title="Our Members"
-        breadcrumb={[{ label: "Home", href: "/" }, { label: "About", href: "/about" }, { label: "Members" }]}
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "Members" }]}
       />
       <section className="max-w-7xl mx-auto px-4 py-10">
         {!members || members.length === 0 ? (
