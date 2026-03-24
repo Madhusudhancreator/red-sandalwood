@@ -2,16 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 import type { NavItem } from "./Navbar";
 
-export function NavbarMobile({
-  items,
-  joinNowLabel,
-}: {
-  items: NavItem[];
-  joinNowLabel: string;
-}) {
+export function NavbarMobile({ items, joinNowLabel }: { items: NavItem[]; joinNowLabel: string }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -19,7 +12,8 @@ export function NavbarMobile({
       <button
         onClick={() => setOpen(!open)}
         aria-label="Toggle menu"
-        className="rounded-full border border-forest-900/10 bg-white/90 p-2 text-forest-900 shadow-sm backdrop-blur"
+        style={{ borderColor: "rgba(62,107,62,0.3)", backgroundColor: "var(--color-almond-cream)", color: "var(--color-deep-mocha)" }}
+        className="rounded-full border p-2 shadow-sm"
       >
         {open ? (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,30 +27,30 @@ export function NavbarMobile({
       </button>
 
       {open && (
-        <div className="absolute inset-x-0 top-20 z-50 mx-4 flex max-h-[calc(100vh-6rem)] flex-col overflow-hidden rounded-[28px] border border-forest-900/10 bg-white text-forest-900 shadow-2xl">
+        <div
+          style={{ backgroundColor: "var(--color-almond-cream)", color: "var(--color-deep-mocha)", borderColor: "rgba(62,107,62,0.15)" }}
+          className="absolute inset-x-0 top-[140px] z-50 mx-4 flex max-h-[calc(100vh-10rem)] flex-col overflow-hidden rounded-[28px] border shadow-2xl"
+        >
           <div className="overflow-y-auto px-4 py-4">
             {items.map((item) => (
               <div key={item.href} className="border-b border-gray-100 last:border-0">
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block px-2 py-3 text-sm font-medium hover:text-sandalwood-700 transition-colors"
+                  style={{ color: "var(--color-deep-mocha)" }}
+                  className="block px-2 py-3 text-sm font-medium hover:text-[#3E6B3E] transition-colors"
                 >
                   {item.label}
                 </Link>
               </div>
             ))}
           </div>
-
-          <div className="mt-auto border-t border-gray-100 bg-sandalwood-50/60 px-4 py-4">
-            <div className="mb-3 flex items-center gap-2">
-              <span className="text-sm text-gray-500">Language</span>
-              <LanguageSwitcher />
-            </div>
+          <div style={{ borderTopColor: "rgba(62,107,62,0.15)", backgroundColor: "rgba(239,225,211,0.6)" }} className="mt-auto border-t px-4 py-4">
             <Link
               href="/join-now"
               onClick={() => setOpen(false)}
-              className="block w-full rounded-full bg-sandalwood-600 px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-sandalwood-700"
+              style={{ backgroundColor: "var(--color-dark-wine)", color: "var(--color-almond-cream)" }}
+              className="block w-full rounded-full px-4 py-3 text-center text-sm font-semibold transition-opacity hover:opacity-90"
             >
               {joinNowLabel}
             </Link>
