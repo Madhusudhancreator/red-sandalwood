@@ -16,9 +16,9 @@ function MemberCard({ member, index }: { member: AssociationMember; index: numbe
     "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&fit=crop&q=80";
 
   return (
-    <div className="flex flex-col items-center text-center flex-shrink-0 w-44 px-3">
+    <div className="flex flex-col items-center text-center flex-shrink-0 w-36 sm:w-44 px-2 sm:px-3">
       <div
-        className="relative w-28 h-28 rounded-full overflow-hidden shadow-lg mb-3 border-4"
+        className="relative w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-lg mb-3 border-4"
         style={{ borderColor: accent }}
       >
         <Image

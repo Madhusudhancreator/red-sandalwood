@@ -35,7 +35,7 @@ function StatItem({ value, suffix, label, started, delay }: {
 
   return (
     <div
-      className="flex flex-col items-center justify-center px-10 py-8 min-w-[180px] transition-all duration-700"
+      className="flex flex-col items-center justify-center px-6 py-6 sm:px-10 sm:py-8 min-w-0 w-full sm:w-auto sm:min-w-[180px] transition-all duration-700"
       style={{
         opacity: started ? 1 : 0,
         transform: started ? "translateY(0)" : "translateY(16px)",
@@ -44,13 +44,13 @@ function StatItem({ value, suffix, label, started, delay }: {
     >
       <div className="flex items-end gap-0.5 leading-none">
         <span
-          className="text-4xl sm:text-5xl font-black tabular-nums"
+          className="text-3xl sm:text-4xl lg:text-5xl font-black tabular-nums"
           style={{ color: "#FFD700" }}
         >
           {count.toLocaleString()}
         </span>
         <span
-          className="text-3xl sm:text-4xl font-black pb-0.5"
+          className="text-2xl sm:text-3xl lg:text-4xl font-black pb-0.5"
           style={{ color: "var(--color-hunter-green)" }}
         >
           {suffix}
@@ -88,7 +88,7 @@ export function StatsStrip() {
         borderColor: "rgba(255,255,255,0.08)",
       }}
     >
-      <div className="flex flex-wrap items-center justify-center divide-x divide-white/10">
+      <div className="grid grid-cols-3 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:divide-x divide-white/10">
         {STATS.map(({ value, suffix, label }, i) => (
           <StatItem
             key={label}

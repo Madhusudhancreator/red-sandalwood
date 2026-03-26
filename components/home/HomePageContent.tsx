@@ -163,7 +163,7 @@ export function HomePageContent({
 
       {/* ── Notice Board ── */}
       <section id="notice-board" className="py-14 px-4 sm:px-8 lg:px-16 bg-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
 
           {/* Notice Board */}
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
@@ -209,7 +209,7 @@ export function HomePageContent({
           </div>
 
           {/* Side Image */}
-          <div className="relative rounded-2xl overflow-hidden shadow-lg min-h-[400px]">
+          <div className="hidden lg:block relative rounded-2xl overflow-hidden shadow-lg min-h-[400px]">
             <Image
               src="/assets/red3.webp"
               alt="Sandalwood plantation notice"
@@ -234,7 +234,7 @@ export function HomePageContent({
       <section id="wood-types" className="grid grid-cols-1 md:grid-cols-2">
 
         {/* Left — Sandalwood */}
-        <div className="relative flex flex-col justify-end overflow-hidden min-h-[580px]">
+        <div className="relative flex flex-col justify-end overflow-hidden min-h-[420px] md:min-h-[580px]">
           <Image
             src="/assets/sandelwood.webp"
             alt="Sandalwood plantation"
@@ -294,7 +294,7 @@ export function HomePageContent({
         </div>
 
         {/* Right — Red Sandalwood */}
-        <div className="relative flex flex-col justify-end overflow-hidden min-h-[580px]">
+        <div className="relative flex flex-col justify-end overflow-hidden min-h-[420px] md:min-h-[580px]">
           <Image
             src="/assets/red_sandelwood.webp"
             alt="Red Sandalwood"
@@ -452,11 +452,11 @@ export function HomePageContent({
             <div className="flex-1 h-px" style={{ backgroundColor: "rgba(62,107,62,0.25)" }} />
           </div>
 
-          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-12 items-start">
+          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-8 lg:gap-12 items-start">
 
             {/* ── Left: Title + intro + decorative ── */}
             <div>
-              <h2 className="text-4xl sm:text-5xl font-extrabold leading-[1.08]" style={{ color: "var(--color-deep-mocha)" }}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.08]" style={{ color: "var(--color-deep-mocha)" }}>
                 Stronger Together.<br />
                 <span style={{ color: "var(--color-hunter-green)" }}>Growing for</span>{" "}
                 <span style={{ color: "var(--color-dark-wine)" }}>the Future.</span>
@@ -569,7 +569,7 @@ export function HomePageContent({
       </section>
 
       {/* ── Association Members ── */}
-      <section id="members" className="py-2 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-almond-cream-2)" }}>
+      <section id="members" className="py-12 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-almond-cream-2)" }}>
         <div className="">
 
           {/* Header */}
@@ -736,7 +736,7 @@ export function HomePageContent({
             const Card = ({ step, label, sub, accent }: typeof steps[0]) => (
               <div className="group flex flex-col rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 bg-white border border-black/5">
                 {/* Image — tall */}
-                <div className="relative w-full overflow-hidden" style={{ height: "260px" }}>
+                <div className="relative w-full overflow-hidden h-48 sm:h-[260px]">
                   <Image
                     src={`/assets/steps/${step}.png`}
                     alt={label}

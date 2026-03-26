@@ -65,7 +65,7 @@ export function HomeMiniNav() {
                 {isActive && (
                   <span
                     className="absolute bottom-0 left-0 right-0 h-[3px] rounded-t-full"
-                    style={{ backgroundColor: "var(--color-hunter-green)" }}
+                    style={{ backgroundColor: "#FFD700" }}
                   />
                 )}
               </button>
