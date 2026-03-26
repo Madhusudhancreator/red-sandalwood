@@ -6,6 +6,9 @@ import type { NewsArticle } from "@/lib/sanity/queries/newsArticles";
 import { PortableTextRenderer } from "@/components/ui/PortableTextRenderer";
 import { urlFor } from "@/lib/sanity/image";
 import { HomeContactSection } from "./HomeContactSection";
+import { HomeMiniNav } from "./HomeMiniNav";
+import { MembersCarousel } from "./MembersCarousel";
+import { StatsStrip } from "./StatsStrip";
 
 function imageUrl(source: unknown, width: number, height: number) {
   if (!source) return null;
@@ -93,6 +96,11 @@ export function HomePageContent({
           </div>
         </div>
       </section>
+      {/* ── Stats Strip ── */}
+      <StatsStrip />
+
+      {/* ── Mini Nav ── */}
+      <HomeMiniNav />
 
       {/* ── Feature Cards ── */}
       <section className="py-12 px-4 sm:px-8 lg:px-16 bg-[#f7f9f7]">
@@ -153,8 +161,77 @@ export function HomePageContent({
         </div>
       </section>
 
+      {/* ── Notice Board ── */}
+      <section id="notice-board" className="py-14 px-4 sm:px-8 lg:px-16 bg-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+          {/* Notice Board */}
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+            {/* Header */}
+            <div className="px-6 py-4" style={{ backgroundColor: "var(--color-hunter-green)" }}>
+              <h2 className="text-xl font-extrabold" style={{ color: "#FFD700" }}>Notice Board</h2>
+            </div>
+
+            {/* Notice Items */}
+            <div className="divide-y divide-gray-100">
+              {[
+                { text: "New Member Registration Open – Apply Before March 31, 2025", isNew: true },
+                { text: "Government Scheme: Free Sapling Distribution for Registered Farmers" },
+                { text: "Legal Documentation Camp – April 10, 2025 at Tirupati Office" },
+                { text: "Sandalwood Cultivation Training Program – Batch 4 Enrollment Started", isNew: true },
+                { text: "Important: All Members to Submit Annual Plantation Report by April 30" },
+                { text: "Red Sanders Export Permit Process – Updated Guidelines Released" },
+              ].map(({ text, isNew }, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-3 px-5 py-4 transition-colors hover:bg-gray-50"
+                  style={{ backgroundColor: i % 2 === 1 ? "#f7f9f7" : "white" }}
+                >
+                  {/* Document icon */}
+                  <svg className="w-6 h-6 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="#3E6B3E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <line x1="10" y1="9" x2="8" y2="9"/>
+                  </svg>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-sm font-medium leading-snug" style={{ color: "var(--color-deep-mocha)" }}>{text}</span>
+                    {isNew && (
+                      <span className="inline-block px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider text-white" style={{ backgroundColor: "var(--color-dark-wine)" }}>
+                        NEW
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Side Image */}
+          <div className="relative rounded-2xl overflow-hidden shadow-lg min-h-[400px]">
+            <Image
+              src="/assets/red3.webp"
+              alt="Sandalwood plantation notice"
+              fill
+              className="object-cover object-center"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <p className="text-white text-lg font-extrabold leading-snug drop-shadow">
+                Stay Updated with<br />
+                <span style={{ color: "#a8d4a8" }}>SRSGA Announcements</span>
+              </p>
+              <div className="w-10 h-[3px] rounded-full mt-3" style={{ backgroundColor: "var(--color-hunter-green)" }} />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* ── Split Section: Sandalwood | Red Sandalwood ── */}
-      <section className="grid grid-cols-1 md:grid-cols-2">
+      <section id="wood-types" className="grid grid-cols-1 md:grid-cols-2">
 
         {/* Left — Sandalwood */}
         <div className="relative flex flex-col justify-end overflow-hidden min-h-[580px]">
@@ -279,7 +356,7 @@ export function HomePageContent({
       </section>
 
       {/* ── Guiding Farmers Section ── */}
-      <section className="py-14 px-4 sm:px-8 lg:px-14" style={{ backgroundColor: "var(--color-almond-cream-2)" }}>
+      <section id="guiding-farmers" className="py-14 px-4 sm:px-8 lg:px-14" style={{ backgroundColor: "var(--color-almond-cream-2)" }}>
 
         {/* Header */}
         <div className="text-center mb-10">
@@ -360,7 +437,7 @@ export function HomePageContent({
       </section>
 
       {/* ── About SRSGA ── */}
-      <section style={{ backgroundColor: "var(--color-almond-cream)" }} className="py-20 px-4 sm:px-8 lg:px-16">
+      <section id="about-srsga" style={{ backgroundColor: "var(--color-almond-cream)" }} className="py-20 px-4 sm:px-8 lg:px-16">
         <div>
 
           {/* Section badge */}
@@ -492,8 +569,8 @@ export function HomePageContent({
       </section>
 
       {/* ── Association Members ── */}
-      <section className="py-16 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-almond-cream-2)" }}>
-        <div className="max-w-5xl mx-auto">
+      <section id="members" className="py-2 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-almond-cream-2)" }}>
+        <div className="">
 
           {/* Header */}
           <div className="flex items-center gap-3 mb-10">
@@ -507,44 +584,13 @@ export function HomePageContent({
             <div className="flex-1 h-px" style={{ backgroundColor: "rgba(62,107,62,0.2)" }} />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {members.map((member, i) => {
-              const accents = ["var(--color-hunter-green)", "var(--color-dark-wine)", "var(--color-olive-wood)"];
-              const accent = accents[i % accents.length];
-              const photoSrc = member.photoUrl ?? "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&fit=crop&q=80";
-              return (
-              <div key={member._id} className="flex flex-col items-center text-center group">
-                {/* Photo */}
-                <div className="relative w-36 h-36 rounded-full overflow-hidden shadow-lg mb-4 border-4"
-                  style={{ borderColor: accent }}>
-                  <Image
-                    src={photoSrc}
-                    alt={member.name}
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    sizes="144px"
-                  />
-                </div>
-                {/* Accent dot */}
-                <div className="w-6 h-1 rounded-full mb-3" style={{ backgroundColor: accent }} />
-                {/* Name */}
-                <p className="text-base font-extrabold leading-snug" style={{ color: "var(--color-deep-mocha)" }}>
-                  {member.name}
-                </p>
-                {/* Designation */}
-                <p className="text-xs font-semibold uppercase tracking-widest mt-1" style={{ color: accent }}>
-                  {member.role}
-                </p>
-              </div>
-              );
-            })}
-          </div>
+          <MembersCarousel members={members} />
 
         </div>
       </section>
 
       {/* ── World Map Section ── */}
-      <section className="relative overflow-hidden min-h-[620px] flex items-center" style={{ backgroundColor: "var(--color-deep-mocha)" }}>
+      <section id="global-reach" className="relative overflow-hidden min-h-[620px] flex items-center" style={{ backgroundColor: "var(--color-deep-mocha)" }}>
 
         {/* World map — full background, low opacity as texture */}
         <div className="absolute inset-0">
@@ -660,7 +706,7 @@ export function HomePageContent({
       </section>
 
       {/* ── Growing Process ── */}
-      <section className="py-20 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-almond-cream-2)" }}>
+      <section id="growing-process" className="py-20 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-almond-cream-2)" }}>
         <div className="">
 
           {/* Header */}
@@ -735,7 +781,7 @@ export function HomePageContent({
       </section>
 
       {/* ── In the News ── */}
-      <section className="py-16 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-almond-cream)" }}>
+      <section id="news" className="py-16 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-almond-cream)" }}>
         <div className="max-w-6xl mx-auto">
 
           {/* Header */}

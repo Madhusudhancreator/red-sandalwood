@@ -29,7 +29,7 @@ export function HomeContactSection() {
     "w-full rounded-xl border px-4 py-3 text-sm font-medium outline-none transition-all placeholder:font-normal";
 
   return (
-    <section className="py-20 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-deep-mocha)" }}>
+    <section id="contact" className="py-20 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-deep-mocha)" }}>
       <div className="max-w-5xl mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-14 items-center">
 
         {/* ── Left: copy ── */}

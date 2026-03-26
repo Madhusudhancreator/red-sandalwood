@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@keyframes scroll-members {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.members-track {
+  animation: scroll-members var(--members-duration, 27s) linear infinite;
+}
+
+.members-track:hover {
+  animation-play-state: paused;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
