@@ -5,15 +5,21 @@ export const joinNowPage = defineType({
   title: "Join Now Page",
   type: "document",
   fields: [
-    defineField({ name: "title", title: "Title", type: "localeString" }),
-    defineField({ name: "body", title: "Body", type: "localeBlockContent" }),
-    defineField({ name: "membershipFees", title: "Membership Fees", type: "localeBlockContent" }),
+    // Hero
+    defineField({ name: "heroTitle", title: "Hero Title", type: "string" }),
+    defineField({ name: "heroSubtitle", title: "Hero Subtitle", type: "text", rows: 2 }),
+    // Form section
+    defineField({ name: "formTitle", title: "Form Section Title", type: "string" }),
+    defineField({ name: "formSubtitle", title: "Form Section Subtitle", type: "string" }),
+    // Trust items displayed beneath the form
     defineField({
-      name: "applicationFormEmbed",
-      title: "Application Form Embed URL",
-      type: "url",
+      name: "trustItems",
+      title: "Trust Items",
+      type: "array",
+      of: [{ type: "string" }],
     }),
+    // SEO
     defineField({ name: "seo", title: "SEO", type: "seoFields" }),
   ],
-  preview: { select: { title: "title.en" } },
+  preview: { select: { title: "heroTitle" } },
 });

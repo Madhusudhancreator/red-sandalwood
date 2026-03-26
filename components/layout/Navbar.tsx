@@ -35,7 +35,7 @@ export function Navbar() {
     { label: t.nav.farmerBenefits, href: "/farmer-benefits" },
     { label: t.nav.helpSupport, href: "/help-support" },
     { label: t.nav.legalSteps, href: "/legal-steps" },
-    { label: t.nav.ourMembers, href: "/#faq" },
+    { label: t.nav.ourMembers, href: "/faq" },
   ];
 
   return (
@@ -63,12 +63,19 @@ export function Navbar() {
               </div>
             </Link>
 
-            <div className="hidden md:flex items-center">
+            <div className="hidden md:flex items-center gap-4">
               {ICONS.map((slot) => (
-                <div key={slot} className="px-4 flex items-center justify-center">
+                <div key={slot} className="px-2 flex items-center justify-center">
                   <Image src={`/icons/${slot}.webp`} alt={slot} width={72} height={56} className="object-contain h-14 w-auto" />
                 </div>
               ))}
+              <Link
+                href="/join-now"
+                style={{ backgroundColor: "var(--color-dark-wine)", color: "var(--color-almond-cream)" }}
+                className="inline-flex items-center justify-center rounded-full px-6 py-2 text-sm font-bold shadow-md transition hover:opacity-90 ml-2"
+              >
+                {t.nav.joinNow}
+              </Link>
             </div>
 
             <div className="md:hidden">
@@ -92,13 +99,6 @@ export function Navbar() {
                 </Link>
               ))}
             </nav>
-            <Link
-              href="/join-now"
-              style={{ backgroundColor: "var(--color-dark-wine)", color: "var(--color-almond-cream)" }}
-              className="hidden md:inline-flex items-center justify-center rounded px-5 py-1.5 text-sm font-semibold shadow-sm transition hover:opacity-90"
-            >
-              {t.nav.joinNow}
-            </Link>
           </div>
         </div>
       </header>

@@ -3,6 +3,8 @@ import { seoFields } from "./shared/seoFields";
 import { localeString } from "./shared/localeString";
 import { localeText } from "./shared/localeText";
 import { localeBlockContent } from "./shared/localeBlockContent";
+import { newsArticle } from "./newsArticle";
+import { faqPage } from "./faqPage";
 import { ourStoryPage } from "./ourStoryPage";
 import { whyChooseUsPage } from "./whyChooseUsPage";
 import { farmerBenefitsPage } from "./farmerBenefitsPage";
@@ -37,4 +39,6 @@ export const schemaTypes = [
   ourMembersPage,
   joinNowPage,
   contactSubmission,
+  newsArticle,
+  faqPage,
 ];

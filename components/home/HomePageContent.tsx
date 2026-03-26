@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { HomePageData } from "@/lib/sanity/queries/home";
+import type { AssociationMember } from "@/lib/sanity/queries/members";
+import type { NewsArticle } from "@/lib/sanity/queries/newsArticles";
 import { PortableTextRenderer } from "@/components/ui/PortableTextRenderer";
 import { urlFor } from "@/lib/sanity/image";
 import { HomeContactSection } from "./HomeContactSection";
@@ -42,7 +44,15 @@ const timelineFallbackImages = [
   "/assets/steps/5.png",
 ];
 
-export function HomePageContent({ data }: { data: HomePageData }) {
+export function HomePageContent({
+  data,
+  members = [],
+  newsArticles = [],
+}: {
+  data: HomePageData;
+  members?: AssociationMember[];
+  newsArticles?: NewsArticle[];
+}) {
   const comparisonFallbackImages = ["/assets/red 8.png", "/assets/red 17.png"];
   const historyImage = imageUrl(data.historyImage, 1200, 900) ?? "/assets/red 6.png";
 
@@ -481,6 +491,58 @@ export function HomePageContent({ data }: { data: HomePageData }) {
         </div>
       </section>
 
+      {/* ── Association Members ── */}
+      <section className="py-16 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-almond-cream-2)" }}>
+        <div className="max-w-5xl mx-auto">
+
+          {/* Header */}
+          <div className="flex items-center gap-3 mb-10">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest flex-shrink-0"
+              style={{ backgroundColor: "var(--color-hunter-green)", color: "var(--color-almond-cream)" }}>
+              <svg className="w-3 h-3" viewBox="0 0 12 12" fill="currentColor">
+                <circle cx="6" cy="6" r="5" opacity="0.4"/><circle cx="6" cy="6" r="2.5"/>
+              </svg>
+              Association Members
+            </span>
+            <div className="flex-1 h-px" style={{ backgroundColor: "rgba(62,107,62,0.2)" }} />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {members.map((member, i) => {
+              const accents = ["var(--color-hunter-green)", "var(--color-dark-wine)", "var(--color-olive-wood)"];
+              const accent = accents[i % accents.length];
+              const photoSrc = member.photoUrl ?? "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&fit=crop&q=80";
+              return (
+              <div key={member._id} className="flex flex-col items-center text-center group">
+                {/* Photo */}
+                <div className="relative w-36 h-36 rounded-full overflow-hidden shadow-lg mb-4 border-4"
+                  style={{ borderColor: accent }}>
+                  <Image
+                    src={photoSrc}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    sizes="144px"
+                  />
+                </div>
+                {/* Accent dot */}
+                <div className="w-6 h-1 rounded-full mb-3" style={{ backgroundColor: accent }} />
+                {/* Name */}
+                <p className="text-base font-extrabold leading-snug" style={{ color: "var(--color-deep-mocha)" }}>
+                  {member.name}
+                </p>
+                {/* Designation */}
+                <p className="text-xs font-semibold uppercase tracking-widest mt-1" style={{ color: accent }}>
+                  {member.role}
+                </p>
+              </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
       {/* ── World Map Section ── */}
       <section className="relative overflow-hidden min-h-[620px] flex items-center" style={{ backgroundColor: "var(--color-deep-mocha)" }}>
 
@@ -668,6 +730,88 @@ export function HomePageContent({ data }: { data: HomePageData }) {
               </>
             );
           })()}
+
+        </div>
+      </section>
+
+      {/* ── In the News ── */}
+      <section className="py-16 px-4 sm:px-8 lg:px-16" style={{ backgroundColor: "var(--color-almond-cream)" }}>
+        <div className="max-w-6xl mx-auto">
+
+          {/* Header */}
+          <div className="flex items-center gap-3 mb-10">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest flex-shrink-0"
+              style={{ backgroundColor: "var(--color-dark-wine)", color: "var(--color-almond-cream)" }}>
+              <svg className="w-3 h-3" viewBox="0 0 12 12" fill="currentColor">
+                <circle cx="6" cy="6" r="5" opacity="0.4"/><circle cx="6" cy="6" r="2.5"/>
+              </svg>
+              In the News
+            </span>
+            <div className="flex-1 h-px" style={{ backgroundColor: "rgba(107,31,26,0.2)" }} />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {newsArticles.map((article, i) => {
+              const accents = ["var(--color-hunter-green)", "var(--color-dark-wine)", "var(--color-olive-wood)"];
+              const accent = accents[i % accents.length];
+              const imgSrc = (article as { imageUrl?: string | null }).imageUrl ?? "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&fit=crop&q=80";
+              return (
+              <div key={article._id} className="group rounded-2xl overflow-hidden border border-black/5 shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                style={{ backgroundColor: "var(--color-almond-cream-2)" }}>
+                {/* Thumbnail */}
+                <div className="relative h-48 overflow-hidden flex-shrink-0">
+                  <Image
+                    src={imgSrc}
+                    alt={article.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  {/* Tag pill */}
+                  {article.tag && (
+                    <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest"
+                      style={{ backgroundColor: accent, color: "var(--color-almond-cream)" }}>
+                      {article.tag}
+                    </span>
+                  )}
+                </div>
+                {/* Content */}
+                <div className="px-5 py-5 flex flex-col flex-1">
+                  <p className="text-[10px] font-bold uppercase tracking-widest mb-2"
+                    style={{ color: "rgba(58,47,47,0.45)" }}>
+                    {article.publishedDate}
+                  </p>
+                  <h3 className="text-sm font-extrabold leading-snug mb-2"
+                    style={{ color: "var(--color-deep-mocha)" }}>
+                    {article.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed flex-1"
+                    style={{ color: "rgba(58,47,47,0.68)" }}>
+                    {article.excerpt}
+                  </p>
+                  {/* <div className="flex items-center gap-1.5 mt-4">
+                    {article.url ? (
+                      <a href={article.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5">
+                        <span className="text-xs font-bold" style={{ color: accent }}>Read more</span>
+                        <svg className="w-3 h-3" style={{ color: accent }} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M3 8h10M9 4l4 4-4 4"/>
+                        </svg>
+                      </a>
+                    ) : (
+                      <>
+                        <span className="text-xs font-bold" style={{ color: accent }}>Read more</span>
+                        <svg className="w-3 h-3" style={{ color: accent }} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M3 8h10M9 4l4 4-4 4"/>
+                        </svg>
+                      </>
+                    )}
+                  </div> */}
+                </div>
+              </div>
+              );
+            })}
+          </div>
 
         </div>
       </section>

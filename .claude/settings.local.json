@@ -7,7 +7,14 @@
       "Bash(cd \"D:/creative_touch/red-sandalwood\" && npx tsc --noEmit 2>&1)",
       "Bash(find . -maxdepth 1 -name \"tailwind.config.*\" -o -name \".env*\" 2>/dev/null | grep -v node_modules)",
       "mcp__Sanity__get_sanity_rules",
-      "Bash(NEXT_PUBLIC_SANITY_PROJECT_ID=4u4797x0 NEXT_PUBLIC_SANITY_DATASET=production npx sanity@latest schema deploy --yes 2>&1)"
+      "Bash(NEXT_PUBLIC_SANITY_PROJECT_ID=4u4797x0 NEXT_PUBLIC_SANITY_DATASET=production npx sanity@latest schema deploy --yes 2>&1)",
+      "Bash(ls -la /d/creative_touch/red-sandalwood/app/\\\\\\(site\\\\\\)/our-story/)",
+      "Bash(ls \"D:/creative_touch/red-sandalwood/app/\\(site\\)/\")",
+      "Bash(cd \"D:\\\\creative_touch\\\\red-sandalwood\" && npx sanity@latest schema deploy 2>&1)",
+      "Bash(cd \"D:\\\\creative_touch\\\\red-sandalwood\" && npx tsc --noEmit 2>&1 | head -60)",
+      "Bash(cd \"D:\\\\creative_touch\\\\red-sandalwood\" && npx tsc --noEmit 2>&1 | head -40)",
+      "Bash(cd \"D:\\\\creative_touch\\\\red-sandalwood\" && npx tsc --noEmit 2>&1 | head -80)",
+      "Bash(cd \"D:\\\\creative_touch\\\\red-sandalwood\\\\sanity\" && npx sanity@latest schema deploy 2>&1)"
     ]
   }
 }
